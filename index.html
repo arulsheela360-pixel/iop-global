@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOP NEWS | International Press Authority</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --iop-navy: #001a33; --iop-gold: #c5a059; --news-red: #8b0000; --bg: #f4f4f4; }
+        * { box-sizing: border-box; transition: 0.3s; }
+        body { font-family: 'Libre Baskerville', serif; margin: 0; background: var(--bg); color: #333; }
+
+        /* Admin Bar */
+        .admin-nav { background: var(--iop-navy); padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--iop-gold); position: sticky; top: 0; z-index: 100; }
+        .admin-btn { background: transparent; color: var(--iop-gold); border: 1px solid var(--iop-gold); padding: 5px 15px; font-family: 'Montserrat'; font-size: 0.7rem; cursor: pointer; text-transform: uppercase; }
+        .admin-btn:hover { background: var(--iop-gold); color: white; }
+
+        /* Header */
+        header { background: white; text-align: center; padding: 60px 20px; border-bottom: 1px solid #ddd; }
+        .masthead { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); margin: 0; color: var(--iop-navy); }
+        .tagline { font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 5px; color: var(--iop-gold); text-transform: uppercase; margin-top: 10px; }
+
+        /* Layout */
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr; gap: 30px; }
+        @media (min-width: 900px) { .container { grid-template-columns: 3fr 1fr; } }
+
+        /* News Cards */
+        .news-item { background: white; padding: 30px; border-bottom: 4px solid var(--iop-navy); margin-bottom: 30px; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .news-date { font-family: 'Montserrat'; font-size: 0.7rem; color: #888; margin-bottom: 10px; font-weight: bold; }
+        .news-title { font-size: 2rem; margin: 10px 0; color: #000; line-height: 1.2; }
+        .news-body { line-height: 1.7; color: #444; font-size: 1.05rem; }
+
+        /* Admin Modal */
+        #adminModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-content { background: white; padding: 30px; width: 100%; max-width: 600px; border-radius: 8px; position: relative; max-height: 90vh; overflow-y: auto; }
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; font-family: 'Montserrat'; }
+        .btn-action { background: var(--news-red); color: white; border: none; padding: 15px; width: 100%; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        .code-output { background: #222; color: #00ff00; padding: 15px; font-family: monospace; font-size: 0.8rem; margin-top: 20px; display: none; white-space: pre-wrap; word-break: break-all; }
+
+        footer { background: var(--iop-navy); color: #777; padding: 40px; text-align: center; font-size: 0.8rem; font-family: 'Montserrat'; }
+    </style>
+</head>
+<body>
+
+    <div class="admin-nav">
+        <span style="color: white; font-size: 0.7rem;">IOP NETWORK STATUS: <span style="color: #00ff00;">ENCRYPTED</span></span>
+        <button class="admin-btn" onclick="openModal()">Founder Login</button>
+    </div>
+
+    <header>
+        <h1 class="masthead">IOP News Wire</h1>
+        <div class="tagline">The Sovereign Voice of International Peace</div>
+    </header>
+
+    <div class="container">
+        <main id="news-feed">
+            
+            <article class="news-item">
+                <div class="news-date">MARCH 18, 2026 | GLOBAL WIRE</div>
+                <h2 class="news-title">IOP News System Successfully Migrated to Permanent Ledger</h2>
+                <div class="news-body">Founder Akilan has upgraded the IOP communication protocols. All official releases are now archived in the Sovereign Codebase to ensure historical preservation and transparency.</div>
+            </article>
+            </main>
+
+        <aside>
+            <div style="background: white; padding: 20px; border: 1px solid #ddd; border-top: 5px solid var(--iop-gold);">
+                <h4 style="font-family: 'Montserrat'; margin: 0 0 10px 0;">OFFICE OF THE HEAD</h4>
+                <p style="font-size: 0.8rem;"><b>FOUNDER:</b> AKILAN<br><b>ID:</b> IOP-2026-001<br><b>DOB:</b> 23-07-2011</p>
+                <hr>
+                <p style="font-size: 0.7rem; color: #999; font-style: italic;">"Someone, Not Something."</p>
+            </div>
+        </aside>
+    </div>
+
+    <div id="adminModal">
+        <div class="modal-content">
+            <h2 style="font-family: 'Cinzel'; margin-top:0;">Founder Console</h2>
+            
+            <div id="login-zone">
+                <input type="password" id="pass-key" placeholder="Enter Security Key">
+                <button class="btn-action" onclick="checkKey()">Verify Identity</button>
+            </div>
+
+            <div id="post-zone" style="display:none;">
+                <input type="text" id="post-title" placeholder="News Headline">
+                <textarea id="post-content" rows="4" placeholder="News Content..."></textarea>
+                <button class="btn-action" onclick="generateNews()">Generate News Code</button>
+                
+                <div id="output-box" class="code-output"></div>
+                <p id="instruction" style="font-size: 0.7rem; display:none; color: var(--news-red); font-weight: bold; margin-top:10px;">
+                    COPY THE GREEN CODE ABOVE. GO TO GITHUB index.html, AND PASTE IT UNDER 'id="news-feed"'.
+                </p>
+            </div>
+            
+            <button onclick="closeModal()" style="background:none; border:none; color:#999; cursor:pointer; margin-top:20px; text-decoration:underline;">Close Terminal</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 INTERNATIONAL ORGANISATION OF PEACE | SUPREME HEAD: AKILAN</p>
+    </footer>
+
+    <script>
+        const modal = document.getElementById('adminModal');
+        function openModal() { modal.style.display = 'flex'; }
+        function closeModal() { modal.style.display = 'none'; }
+
+        function checkKey() {
+            if(document.getElementById('pass-key').value === "Akilan2026") {
+                document.getElementById('login-zone').style.display = 'none';
+                document.getElementById('post-zone').style.display = 'block';
+            } else { alert("Unauthorized Access Denied."); }
+        }
+
+        function generateNews() {
+            const title = document.getElementById('post-title').value;
+            const content = document.getElementById('post-content').value;
+            const date = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).toUpperCase();
+            
+            if(!title || !content) return alert("Fields Required.");
+
+            // Create the HTML Block
+            const htmlBlock = `<article class="news-item">\n  <div class="news-date">${date} | GLOBAL WIRE</div>\n  <h2 class="news-title">${title}</h2>\n  <div class="news-body">${content}</div>\n</article>`;
+            
+            // Show it to Akilan
+            const output = document.getElementById('output-box');
+            output.innerText = htmlBlock;
+            output.style.display = 'block';
+            document.getElementById('instruction').style.display = 'block';
+
+            // Also preview it on screen immediately
+            document.getElementById('news-feed').insertAdjacentHTML('afterbegin', htmlBlock);
+        }
+    </script>
+</body>
+</html>
