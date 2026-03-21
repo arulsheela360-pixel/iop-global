@@ -18,31 +18,31 @@
         .nav-btn.active { background: var(--iop-gold); color: var(--iop-navy); }
         .founder-btn { background: var(--red); color: white; border: none; padding: 8px 15px; border-radius: 4px; font-weight: 900; font-size: 10px; cursor: pointer; font-family: 'Montserrat'; }
 
-        /* Header */
-        header { background: var(--white); text-align: center; padding: 40px 20px; border-top: 8px solid var(--saffron); border-bottom: 10px double var(--iop-navy); }
-        .logo-text { font-family: 'Montserrat'; font-weight: 900; font-size: 2.2rem; letter-spacing: 6px; margin: 0; }
-        .tagline { font-family: 'Montserrat'; font-size: 10px; color: var(--iop-gold); letter-spacing: 4px; font-weight: 700; text-transform: uppercase; margin-top: 5px; }
+        /* Header with Logo */
+        header { background: var(--white); text-align: center; padding: 20px; border-top: 8px solid var(--saffron); border-bottom: 10px double var(--iop-navy); }
+        .iop-seal { width: 120px; height: auto; margin-bottom: 10px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
+        .logo-text { font-family: 'Montserrat'; font-weight: 900; font-size: 1.8rem; letter-spacing: 4px; margin: 0; }
+        .tagline { font-family: 'Montserrat'; font-size: 9px; color: var(--iop-gold); letter-spacing: 3px; font-weight: 700; text-transform: uppercase; }
 
         /* Sections */
         .section { max-width: 900px; margin: 0 auto; padding: 25px; display: none; min-height: 70vh; }
         .active-section { display: block; animation: fadeInUp 0.5s ease; }
 
-        /* Lex India AI & Incident Analysis */
-        .incident-input { width: 100%; padding: 20px; border: 3px solid var(--iop-navy); border-radius: 15px; font-family: 'Montserrat'; font-size: 14px; margin-bottom: 15px; resize: none; }
+        /* Lex India UI */
+        .incident-input { width: 100%; padding: 20px; border: 3px solid var(--iop-navy); border-radius: 15px; font-family: 'Montserrat'; font-size: 14px; margin-bottom: 15px; resize: none; background: #fff; }
         .card { background: white; padding: 30px; border-radius: 15px; border-left: 10px solid var(--iop-navy); box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 20px; position: relative; }
         
-        .stamp-box { text-align: center; margin: 20px 0; min-height: 60px; }
-        .stamp { display: inline-block; padding: 10px 30px; font-family: 'Montserrat'; font-weight: 900; font-size: 28px; border: 5px solid; border-radius: 10px; transform: rotate(-5deg); text-transform: uppercase; display: none; }
+        .stamp-box { text-align: center; margin: 20px 0; min-height: 80px; }
+        .stamp { display: inline-block; padding: 12px 35px; font-family: 'Montserrat'; font-weight: 900; font-size: 32px; border: 6px solid; border-radius: 12px; transform: rotate(-5deg); text-transform: uppercase; display: none; }
         #stamp-legal { color: var(--success); border-color: var(--success); }
         #stamp-illegal { color: var(--red); border-color: var(--red); }
 
-        /* Overlays */
-        .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,26,51,0.95); z-index: 3000; align-items: center; justify-content: center; }
-        .modal { background: white; padding: 35px; border-radius: 20px; width: 90%; max-width: 450px; text-align: center; }
+        /* Modal / Overlays */
+        .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,26,51,0.96); z-index: 3000; align-items: center; justify-content: center; }
+        .modal { background: white; padding: 35px; border-radius: 20px; width: 90%; max-width: 450px; text-align: center; border: 4px solid var(--iop-gold); }
         .join-input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; }
 
-        /* Green Code Box */
-        .green-code-box { background: #f0fff4; border: 2px dashed var(--success); color: var(--success); padding: 15px; font-family: monospace; font-size: 11px; margin-top: 15px; display: none; text-align: left; }
+        .green-code-box { background: #e8f5e9; border: 2px dashed var(--success); color: var(--success); padding: 15px; font-family: monospace; font-size: 11px; margin-top: 15px; display: none; text-align: left; border-radius: 8px; }
 
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -61,12 +61,11 @@
         </div>
     </nav>
 
-    <header>
+    <header id="main-header">
+        <img src="https://i.ibb.co/LDRRjM8/1000034491.png" alt="IOP Seal" class="iop-seal">
         <div class="logo-text">I O P</div>
         <div class="tagline">International Organisation of Peace</div>
     </header>
-
-    <a href="https://drive.google.com/file/d/1BWSOqcIA0U1vUT-PkO5albIWMp5jT5JU/view?usp=sharing" target="_blank" style="display:block; text-align:center; padding:15px; color:var(--iop-gold); text-decoration:none; font-weight:900; font-family:'Montserrat'; font-size:12px;">📂 OFFICIAL SOVEREIGN DRIVE ARCHIVE</a>
 
     <main>
         <section id="about" class="section active-section">
@@ -75,16 +74,15 @@
                 <p><strong>Founder:</strong> Akilan</p>
                 <p><strong>Jurisdiction:</strong> Global Peace Protocol (IOP)</p>
                 <hr style="opacity: 0.2;">
-                <p>Welcome to the International Organisation of Peace (IOP) Headquarters. This portal serves as a sovereign digital perimeter for judicial transparency and the transition from IPC to Bharatiya Nyaya Sanhita (BNS).</p>
-                <button class="nav-btn" onclick="tab('lex')" style="width:100%; margin-top:20px;">Analyze Incident Now</button>
+                <p>This is the official headquarters of the International Organisation of Peace. Our mission is to provide judicial clarity using the latest Bharatiya Nyaya Sanhita (BNS) standards.</p>
+                <a href="https://drive.google.com/file/d/1BWSOqcIA0U1vUT-PkO5albIWMp5jT5JU/view?usp=sharing" target="_blank" style="color:var(--iop-gold); text-decoration:none; font-weight:bold; display:block; margin-top:10px;">📂 Access Official Drive Archives</a>
             </div>
         </section>
 
         <section id="lex" class="section">
             <div id="capture-zone" class="card">
-                <h2 style="font-family:'Montserrat'; margin-top:0;">Incident Analysis Engine</h2>
-                <p style="font-size: 12px; color: #666;">Describe the incident below (e.g., "Someone stole my phone" or "Helping a person in an accident").</p>
-                <textarea id="incidentInput" class="incident-input" rows="4" placeholder="Describe the incident here..."></textarea>
+                <h2 style="font-family:'Montserrat'; margin-top:0;">Lex India: Incident Verdict</h2>
+                <textarea id="incidentInput" class="incident-input" rows="4" placeholder="Describe an incident (e.g. Someone stole my phone)..."></textarea>
                 <button onclick="analyzeIncident()" style="width:100%; padding:15px; background:var(--iop-navy); color:white; border:none; border-radius:10px; font-weight:900; cursor:pointer;">GENERATE VERDICT</button>
                 
                 <div class="stamp-box">
@@ -92,9 +90,9 @@
                     <div id="stamp-illegal" class="stamp">ILLEGAL</div>
                 </div>
                 
-                <div id="verdict-output" style="margin-top:20px; padding:15px; border-radius:10px; background:#f9f9f9; display:none;">
-                    <strong id="bns-section-header" style="color:var(--iop-navy);">BNS SECTION: </strong>
-                    <p id="bns-description" style="font-size: 14px; margin-top:5px;"></p>
+                <div id="verdict-output" style="margin-top:20px; padding:20px; border-radius:10px; background:#f9f9f9; display:none; border:1px solid #ddd;">
+                    <strong id="bns-section-header" style="color:var(--iop-navy); font-size:18px;"></strong>
+                    <p id="bns-description" style="font-size: 14px; margin-top:10px; color:#444;"></p>
                 </div>
             </div>
             <button onclick="exportPNG()" style="width:100%; padding:15px; background:var(--iop-gold); color:var(--iop-navy); border:none; border-radius:8px; font-weight:900; cursor:pointer; margin-top:10px;">SAVE RECORD AS PNG 📸</button>
@@ -103,9 +101,9 @@
         <section id="gazette" class="section">
             <div id="feed">
                 <div class="card">
-                    <small>SYSTEM STATUS • 2026</small>
-                    <h3>Sovereign Portal Active</h3>
-                    <p>Welcome to the International Organisation of Peace Headquarters. Portal established by Akilan.</p>
+                    <small>SYSTEM LOG • 2026</small>
+                    <h3>Portal Secured</h3>
+                    <p>International Organisation of Peace Headquarters established under Sovereign Control.</p>
                 </div>
             </div>
         </section>
@@ -114,44 +112,40 @@
     <div id="join-overlay" class="overlay">
         <div class="modal">
             <div id="step-1">
-                <h2>Sovereign Entry</h2>
+                <h2>Join IOP</h2>
                 <input type="text" id="j-name" class="join-input" placeholder="Full Name">
                 <input type="tel" id="j-phone" class="join-input" placeholder="Phone Number">
-                <button class="nav-btn" style="background:var(--iop-navy); color:white; width:100%; margin-top:15px;" onclick="nextStep(2)">NEXT</button>
+                <button class="nav-btn" style="background:var(--iop-navy); color:white; width:100%; margin-top:15px;" onclick="nextStep(2)">CONTINUE</button>
             </div>
             <div id="step-2" style="display:none;">
                 <h2>Details</h2>
                 <input type="date" id="j-dob" class="join-input">
                 <input type="email" id="j-email" class="join-input" placeholder="Email (Optional)">
-                <button class="nav-btn" style="background:var(--iop-navy); color:white; width:100%; margin-top:15px;" onclick="nextStep(3)">NEXT</button>
+                <button class="nav-btn" style="background:var(--iop-navy); color:white; width:100%; margin-top:15px;" onclick="nextStep(3)">CONTINUE</button>
             </div>
             <div id="step-3" style="display:none;">
-                <h2>Finalize</h2>
+                <h2>Location</h2>
                 <input type="text" id="j-address" class="join-input" placeholder="Address">
                 <input type="text" id="j-country" class="join-input" placeholder="Country">
-                <button class="nav-btn" style="background:var(--success); color:white; width:100%; margin-top:15px;" onclick="closeOverlay()">FINISH</button>
+                <button class="nav-btn" style="background:var(--success); color:white; width:100%; margin-top:15px;" onclick="closeOverlay()">FINISH JOINING</button>
             </div>
         </div>
     </div>
 
     <div id="adminPanel" class="overlay">
         <div class="modal" style="text-align:left;">
-            <h3 style="margin-top:0; color:var(--iop-navy);">Founder Authorization</h3>
-            <input type="password" id="adminPass" class="join-input" placeholder="Master Key">
+            <h3 style="color:var(--iop-navy); margin-top:0;">Founder Authorization</h3>
+            <input type="password" id="adminPass" class="join-input" placeholder="Enter Master Key">
             <input type="text" id="postTitle" class="join-input" placeholder="Headline">
-            <textarea id="postContent" class="join-input" rows="3" placeholder="Article Body or Drive Link..."></textarea>
-            <label style="font-size:11px; font-weight:bold;">Upload Evidence:</label>
+            <textarea id="postContent" class="join-input" rows="3" placeholder="Post content..."></textarea>
             <input type="file" id="postFile" class="join-input" onchange="showGreenCode()">
-            <button onclick="authorizePost()" style="width:100%; padding:15px; background:var(--iop-navy); color:white; border:none; border-radius:10px; font-weight:bold; cursor:pointer;">PUBLISH</button>
+            <button onclick="authorizePost()" style="width:100%; padding:15px; background:var(--iop-navy); color:white; border:none; border-radius:10px; font-weight:bold; cursor:pointer;">PUBLISH POST</button>
             <div id="greenCodeBox" class="green-code-box"></div>
             <button onclick="closeOverlay()" style="border:none; background:none; margin-top:15px; color:gray; width:100%; cursor:pointer;">Exit</button>
         </div>
     </div>
 
     <script>
-        let laws = [];
-        fetch('bns.json').then(r => r.json()).then(data => { laws = data; }).catch(e => console.log("System Ready."));
-
         function tab(t) {
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
@@ -168,64 +162,68 @@
             if(s === 3) { document.getElementById('step-2').style.display = 'none'; document.getElementById('step-3').style.display = 'block'; }
         }
 
-        // INCIDENT ANALYSIS LOGIC
+        // CORRECTED ANALYSIS LOGIC (Fixes the Legal/Illegal error)
         function analyzeIncident() {
             const input = document.getElementById('incidentInput').value.toLowerCase();
             const output = document.getElementById('verdict-output');
-            const stampLegal = document.getElementById('stamp-legal');
-            const stampIllegal = document.getElementById('stamp-illegal');
+            const sLegal = document.getElementById('stamp-legal');
+            const sIllegal = document.getElementById('stamp-illegal');
             
-            stampLegal.style.display = 'none';
-            stampIllegal.style.display = 'none';
+            sLegal.style.display = 'none';
+            sIllegal.style.display = 'none';
             output.style.display = 'block';
 
-            let verdict = { section: "GENERAL QUERY", desc: "No specific penal code violation detected based on current BNS parameters." };
+            // List of illegal keywords
+            const illegalKeywords = ["stole", "theft", "murder", "kill", "assault", "rape", "fight", "crime", "robbery", "scam", "fraud", "kidnap", "302", "303"];
+            
+            let isCrime = illegalKeywords.some(keyword => input.includes(keyword));
 
-            if(input.includes("stole") || input.includes("theft")) {
-                verdict = { section: "303 BNS", desc: "Punishment for Theft. Whoever commits theft shall be punished with imprisonment for a term which may extend to three years." };
-                stampIllegal.style.display = 'inline-block';
-            } else if(input.includes("murder") || input.includes("kill")) {
-                verdict = { section: "101 BNS", desc: "Punishment for Murder. Whoever commits murder shall be punished with death or imprisonment for life." };
-                stampIllegal.style.display = 'inline-block';
-            } else if(input.includes("help") || input.includes("save") || input.includes("accident assistance")) {
-                verdict = { section: "GOOD SAMARITAN LAW", desc: "Legal protection for citizens providing immediate assistance to victims. Encouraged under Sovereign Peace Protocol." };
-                stampLegal.style.display = 'inline-block';
+            if(isCrime) {
+                sIllegal.style.display = 'inline-block';
+                if(input.includes("stole") || input.includes("theft")) {
+                    document.getElementById('bns-section-header').innerText = "BNS VERDICT: Section 303";
+                    document.getElementById('bns-description').innerText = "Punishment for Theft: Imprisonment for up to 3 years and fine.";
+                } else if(input.includes("murder") || input.includes("kill")) {
+                    document.getElementById('bns-section-header').innerText = "BNS VERDICT: Section 101";
+                    document.getElementById('bns-description').innerText = "Punishment for Murder: Death penalty or Life imprisonment.";
+                } else {
+                    document.getElementById('bns-section-header').innerText = "CRIMINAL OFFENSE DETECTED";
+                    document.getElementById('bns-description').innerText = "This incident constitutes a violation under Bharatiya Nyaya Sanhita (BNS). Legal action advised.";
+                }
             } else {
-                stampLegal.style.display = 'inline-block';
+                sLegal.style.display = 'inline-block';
+                document.getElementById('bns-section-header').innerText = "SOVEREIGN CLEARANCE";
+                document.getElementById('bns-description').innerText = "No criminal intent or BNS violation found in this description. Action considered Legal.";
             }
-
-            document.getElementById('bns-section-header').innerText = "BNS VERDICT: " + verdict.section;
-            document.getElementById('bns-description').innerText = verdict.desc;
         }
 
         function showGreenCode() {
-            const code = "IOP-VERIFIED-" + Math.random().toString(36).substr(2, 9).toUpperCase();
-            document.getElementById('greenCodeBox').innerText = "GREEN CODE GENERATED: " + code;
+            const code = "IOP-" + Math.random().toString(36).substr(2, 9).toUpperCase();
+            document.getElementById('greenCodeBox').innerText = "GREEN VERIFICATION CODE: " + code;
             document.getElementById('greenCodeBox').style.display = "block";
         }
 
         function authorizePost() {
-            if(document.getElementById('adminPass').value !== "Akilan2026") return alert("ACCESS DENIED: INCORRECT MASTER KEY");
+            if(document.getElementById('adminPass').value !== "Akilan2026") return alert("ACCESS DENIED");
             const title = document.getElementById('postTitle').value;
             const content = document.getElementById('postContent').value;
-            
             const card = document.createElement('div');
             card.className = "card";
             card.innerHTML = `<small>${new Date().toLocaleDateString()}</small><h3>${title}</h3><p>${content}</p>`;
             document.getElementById('feed').prepend(card);
-            
-            alert("PUBLISHED TO SOVEREIGN ARCHIVE");
+            alert("Post Published!");
             closeOverlay();
         }
 
         function exportPNG() {
             html2canvas(document.getElementById('capture-zone')).then(canvas => {
                 const link = document.createElement('a');
-                link.download = 'IOP_Incident_Record.png';
+                link.download = 'IOP_Verdict.png';
                 link.href = canvas.toDataURL();
                 link.click();
             });
         }
     </script>
 </body>
-</html>
+                </html>
+                    
